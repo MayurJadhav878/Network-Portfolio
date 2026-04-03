@@ -1,0 +1,11 @@
+OSPF MULTI AREA ALSO HAVE ABR (AREA BORDER ROUTER):- it connects all area to the backbone area 0
+
+Technologies:
+OSPF Area 0, Area 1, Area 2
+MD5 Authentication
+Inter-area route summarization
+Passive Interfaces
+LSA Types Verification
+
+Task:
+Configure OSPF with multiple areas, apply authentication, summarize routes at ABR, and test LSA propagation.
