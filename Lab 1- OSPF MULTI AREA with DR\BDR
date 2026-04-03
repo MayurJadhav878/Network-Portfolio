@@ -1,9 +1,0 @@
-Technologies:
-OSPF Area 0, Area 1, Area 2
-MD5 Authentication
-inter-area route summarization
-Passive Interfaces
-LSA Types Verification
-
-Task:
-Configure OSPF with multiple areas, apply authentication, summarize routes at ABR, and test LSA propagation.
