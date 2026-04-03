@@ -1,0 +1,114 @@
+OSPF Multi-Area :-
+
+...R1...
+
+en
+conf t
+host R1
+!
+int g0/0
+ip address 10.1.0.1 255.255.255.0
+ip ospf 1 area 0
+no sh
+ex
+!
+int g0/1
+ip address 10.1.1.1 255.255.255.0
+no sh
+ex
+!
+int g0/2
+ip address 10.1.2.1 255.255.255.0
+no sh
+ex
+!
+int loopback0
+ip address 1.1.1.1 255.255.255.255
+ip ospf 1 area 0
+ex
+!
+router ospf 1
+router-id 1.1.1.1
+network 1.1.1.1 0.0.0.0 area 0
+network 10.1.0.0 0.0.0.255 area 0
+!
+passive-interface loopback0
+
+
+...R2...
+
+en
+conf t
+host R2
+!
+int g0/0
+ip address 10.1.0.1 255.255.255.0
+ip ospf 1 area 0
+no sh
+ex
+!
+int g0/1
+ip address 10.2.0.1 255.255.255.0
+ip ospf 1 area 1
+no sh
+ex
+! 
+int g0/2
+ip address 10.2.1.1 255.255.255.0
+ip ospf 1 area 1
+no sh
+ex
+!
+int g0/3
+ip address 10.2.2.1 255.255.255.0
+ip ospf 1 area 1
+no sh
+ex
+!
+int loopback0
+ip address 2.2.2.2 255.255.255.255
+ex
+!
+router ospf 1
+router-id 2.2.2.2
+passsive-interface loopback0
+!
+area 1 range 10.1.0.0 255.255.252.0
+
+
+...R3...
+
+en
+conf t
+host R3
+!
+int loopback0
+ip address 3.3.3.3 255.255.255.255
+ex
+!
+int g0/0
+ip address 10.3.0.1 255.255.255.0
+ip ospf 1 area 0
+no sh
+ex
+!
+int g0/1
+ip address 10.3.1.1 255.255.255.0
+ip ospf 1 area 2
+no sh
+ex
+!
+int g0/2
+ip address 10.3.2.1 255.255.255.0
+ip ospf 1 area 2
+no sh
+ex
+!
+router ospf 1
+router-id 3.3.3.3
+passive-interface loopback0
+area 2 range 10.2.0.0 255.255.252.0 
+
+
+
+
