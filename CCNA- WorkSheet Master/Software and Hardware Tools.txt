@@ -1,0 +1,17 @@
+Software Tools
+ping
+tracert
+pathping
+nslookup
+netstat -ant
+
+latency delay between user and network data delivery.
+milisecond  
+
+1 second = 1000 milisecond
+
+Hardware Tools
+-> Crimping Tool : - Used to make ethernet cable.
+-> Cable Striper & Punch Down: - Cable Cutting, I/O Create.
+-> Tone & Probe Set/ Tone Generator : - Used to track Cable.
+-> Network Cable Tester : - Ethernet Cable Conectivity Check.

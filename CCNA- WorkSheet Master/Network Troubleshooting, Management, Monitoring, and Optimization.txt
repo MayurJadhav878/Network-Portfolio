@@ -1,0 +1,36 @@
+Buttom-up approch to troubleshooting.
+Start with Physical layer END with Application layer if issu not solve.
+
+Application Layer		Firewall	
+Presentation Layer		
+Session Layer		
+Transport Layer			
+Network Layer			Router,L3 Switch(Multi-Layer)
+Datalink Layer			Switch,Bridge
+Physical Layer			Cable,Hub,Repeator,Media Convert
+
+Physical Layer ->
+	Cable Mismatch (Crimping issue)
+	indentify : - Cable Tester, Ethernet Port LED
+
+Datalink Layer ->
+	Switch : - Loop Issue.
+	indentify : - ping-RTO(Request Time Out), LED Blink Continues.
+
+Network Layer ->
+	Router : - Routing issue.
+	indentify : - Ping-RTO(Request Time Out), tracert.
+	
+	Conflicted IP Address: - IP Addressing Issue.Same ip address configured in two systems.
+	indetify : - ipconfig /all, ifconfig (linux)
+
+Transport Layer ->
+	Port Conflict : - two services are configure and try working in same port.
+	Indentify : - netstat -ant
+
+Application presentation session -> 
+	Firewall rules issue.
+	Indentify : - Disable Firewall / Turn off firewall
+	
+	Software issue.
+	Indentify : - get error from softwares.reinstall application
