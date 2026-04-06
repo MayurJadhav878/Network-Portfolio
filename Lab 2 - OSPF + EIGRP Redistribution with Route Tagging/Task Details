@@ -1,0 +1,10 @@
+OSPF + EIGRP Redistribution with Route Tagging
+
+Technologies:
+OSPF to EIGRP redistribution
+Tagging to prevent loops
+Route filtering using prefix-list + route-map
+Default routes
+
+Task:
+Redistribute OSPF ↔ EIGRP both ways with loop-prevention using tags.
